@@ -1,0 +1,168 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  min-height: 100vh;
+}
+
+#level-select {
+  display: flex;
+  gap: 8px;
+}
+
+#level-select select {
+  font-size: 20px;
+  width: 120px;
+}
+
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+  background-color: transparent;
+  width: 200px;
+  height: 200px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Position the front and back side */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: #ddd;
+  color: black;
+  font-size: 80px;
+  transform: rotateY(180deg);
+  display: grid;
+  place-items: center;
+}
+
+.grid-container {
+  max-width: 850px;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+.is-matched .flip-card-back {
+  background-color: #92d459;
+  color: #000000;
+  pointer-events: none;
+}
+
+.modal-shade {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  /* display: grid; */
+  display: none;
+  place-items: center;
+}
+
+.modal {
+  background-color: #fff;
+  min-width: 400px;
+  padding: 30px;
+  border-radius: 8px;
+}
+
+.game-over {
+  display: none;
+}
+
+.history {
+  display: none;
+}
+
+#history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+  width: 400px;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.history-card {
+  border: 2px solid rgba(200, 200, 200, 0.5);
+  border-radius: 6px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.history-card-cell {
+  padding: 8px;
+}
+
+.history-card-cell:first-child {
+  grid-row: span 2; /* Spanning the first column across 2 rows */
+}
+
+.history-card-cell-label {
+  font-size: 14px;
+  font-weight: 900;
+  color: rgb(81, 66, 173);
+}
+
+.modal h1 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: darkslateblue;
+}
+
+button {
+  background-color: darkslateblue;
+  font-size: 18px;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #b159d4;
+  cursor: pointer;
+}
+
+button:active {
+  background-color: #713888;
+  transform: translateY(2px) translateX(2px);
+}
+
+button:disabled {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+}
+
+footer {
+  margin-top: 50px;
+}

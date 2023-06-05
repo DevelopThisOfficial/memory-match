@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Memory Match - DevelopThis</title>
+    <link rel="icon" href="./images/favicon.png" type="image/png" />
+  </head>
+  <body>
+    <h2>Matches Made: <span id="pairs">0</span>/8</h2>
+    <h2>Number of allowed moves: <span id="moves">25</span></h2>
+    <h2>Time Remaining: <span id="time-remaining">60</span> seconds</h2>
+    <div id="level-select">
+      <h2>Level:</h2>
+      <select name="difficulty" id="difficulty">
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Hard</option>
+      </select>
+    </div>
+    <div class="modal-shade">
+      <div class="modal">
+        <div class="game-over">
+          <h1>Game Over!</h1>
+          <h2 id="end-message"></h2>
+          <h3>Matches Made: <span id="pairs2"></span>/8</h3>
+          <h3>Moves Made: <span id="moves2"></span></h3>
+          <h3>Time Spent: <span id="time2"></span> seconds</h3>
+          <br />
+          <button id="view-history">View Game History</button>
+          <button class="play-again">Play Again</button>
+        </div>
+        <div class="history">
+          <h1>Game History</h1>
+          <div id="history-list"></div>
+          <div style="text-align: center">
+            <button class="clear-history">Clear History</button>
+            <button class="play-again">Play Again</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grid-container"></div>
+    <!-- <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+          </div>
+          <div class="flip-card-back">
+          </div>
+        </div>
+      </div> -->
+    <footer>
+      <p>
+        &copy; 2023
+        <a href="https://www.develop-this.com" target="_blank">DevelopThis</a>.
+        All Rights Reserved. Built by
+        <a href="https://github.com/judeclark19" target="_blank">Jude Clark</a>.
+      </p>
+    </footer>
+
+    <!-- <script src="./script.js"></script> -->
+    <script type="module" src="./js/index.js"></script>
+  </body>
+</html>
